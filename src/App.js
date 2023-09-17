@@ -5,6 +5,7 @@ import Colors from "./pages/Colors";
 import EachColor from "./pages/EachColor";
 import AddColor from "./pages/AddColor";
 import ColorsPaginated from "./pages/ColorsPaginated";
+import ColorsInfinite from "./pages/ColorsInfinite";
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
               <li>
                 <Link to="/colors-paginated">Paginated Colours</Link>
               </li>
+              <li>
+                <Link to="/colors-infinite">Colors Infinite</Link>
+              </li>
             </ul>
           </nav>
           <Routes>
@@ -36,6 +40,7 @@ function App() {
             <Route path="/colors/:id" element={<EachColor/>} />
             <Route path="/addcolor" element={<AddColor />} />
             <Route path="/colors-paginated" element={<ColorsPaginated />} />
+            <Route path="/colors-infinite" element={<ColorsInfinite />} />
           </Routes>
         </div>
       </Router>
