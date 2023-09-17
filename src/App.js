@@ -1,14 +1,11 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Home from "./pages/Home";
-import SuperHero from "./pages/SuperHero";
 import "./App.css";
+import Colors from "./pages/Colors";
 
-const queryClient = new QueryClient();
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
+  return (   
       <Router>
         <div>
           <nav>
@@ -17,17 +14,16 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/super-heroes">Super Heroes</Link>
+                <Link to="/colors">Colors</Link>
               </li>
             </ul>
           </nav>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/super-heroes" element={<SuperHero />} />
+            <Route path="/colors" element={<Colors />} />
           </Routes>
         </div>
       </Router>
-    </QueryClientProvider>
   );
 }
 

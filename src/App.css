@@ -3,6 +3,13 @@
   margin: 2rem;
 }
 
+.colors{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
