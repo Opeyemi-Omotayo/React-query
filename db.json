@@ -3,42 +3,50 @@
         {
             "id": 1,
             "label": "red",
-            "userId": 1
+            "userId": 1,
+            "body": "very good color"
         },
         {
             "id": 2,
             "label": "blue",
-            "userId": 2
+            "userId": 2,
+            "body": "very good color"
         },
         {
             "id": 3,
             "label": "green",
-            "userId": 3
+            "userId": 3,
+            "body": "very good color"
         },
         {
             "id": 4,
             "label": "yellow",
-            "userId": 1
+            "userId": 1,
+            "body": "very good color"
         },
         {
             "id": 5,
             "label": "black",
-            "userId": 2
+            "userId": 2,
+            "body": "very good color"
         },
         {
             "id": 6,
             "label": "white",
-            "userId": 3
+            "userId": 3,
+            "body": "very good color"
         },
         {
             "id": 7,
             "label": "orange",
-            "userId": 1
+            "userId": 1,
+            "body": "very good color"
         },
         {
             "id": 8,
             "label": "purple",
-            "userId": 2
+            "userId": 2,
+            "body": "very good color"
         }
     ],
     "users": [

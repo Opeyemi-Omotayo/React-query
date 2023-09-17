@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getcolors } from "../api/colors";
+import { getColors } from "../api/colors";
 
 
 // /colors -> ["colors"]
@@ -13,7 +13,7 @@ const Colors = () => {
 
   const colorsQuery = useQuery({
     queryKey: ["colors"],
-    queryFn: getcolors,
+    queryFn: getColors,
   });
 
 //   const newColorMutation = useMutation({
