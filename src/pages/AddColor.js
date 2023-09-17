@@ -26,7 +26,7 @@ const AddColor = () => {
     }
   
     return (
-      <div>
+      <div className='colors'>
         {addColorMutation.isError && JSON.stringify(addColorMutation.error)}
         <h1>Add Color</h1>
         <form onSubmit={handleSubmit}>

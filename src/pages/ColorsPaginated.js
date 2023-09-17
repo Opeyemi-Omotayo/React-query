@@ -15,7 +15,7 @@ const ColorsPaginated = () => {
   if (status === "error") return <h1>{JSON.stringify(error)}</h1>;
 
   return (
-    <>
+    <div className="colors">
       <h1>
         Colors Paginated
         <br />
@@ -39,7 +39,7 @@ const ColorsPaginated = () => {
       {data.nextPage && (
         <button onClick={() => setPage(data.nextPage)}>Next</button>
       )}
-    </>
+    </div>
   );
 };
 

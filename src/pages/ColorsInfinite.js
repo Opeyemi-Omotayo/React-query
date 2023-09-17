@@ -20,7 +20,7 @@ const ColorsInfinite = () => {
       if (status === "error") return <h1>{JSON.stringify(error)}</h1>
     
       return (
-        <>
+        <div className='colors'>
           <h1>Colors Infinite</h1>
           {data.pages
             .flatMap(data => data.colors)
@@ -32,7 +32,7 @@ const ColorsInfinite = () => {
               {isFetchingNextPage ? "Loading..." : "Load More"}
             </button>
           )}
-        </>
+        </div>
       )
 }
 
