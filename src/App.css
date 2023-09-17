@@ -1,10 +1,29 @@
 .App {
   text-align: center;
+  margin: 2rem;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: blanchedalmond;
+  margin-block-start: 0;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a{
+  text-decoration: none;
+color: rgb(2, 2, 85);
 }
 
 @media (prefers-reduced-motion: no-preference) {
