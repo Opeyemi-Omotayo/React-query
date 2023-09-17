@@ -1,23 +1,13 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import { useQueryClient } from "@tanstack/react-query";
 import "./App.css";
 import Colors from "./pages/Colors";
 import EachColor from "./pages/EachColor";
-import { getColor } from "./api/colors";
 import AddColor from "./pages/AddColor";
+import ColorsPaginated from "./pages/ColorsPaginated";
 
 
 function App() {
-  const queryClient = useQueryClient()
-
-  function onHoverColorLink() {
-    queryClient.prefetchQuery({
-      queryKey: ["posts", 1],
-      queryFn: () => getColor(1),
-    })
-  }
-
   return (   
       <Router>
         <div>
@@ -30,10 +20,13 @@ function App() {
                 <Link to="/colors">Colors</Link>
               </li>
               <li>
-                <Link onMouseEnter={onHoverColorLink} to="/colors/:id">Each Color</Link>
+                <Link  to="/colors/:id">Each Color</Link>
               </li>
               <li>
                 <Link to="/addcolor">Add Color</Link>
+              </li>
+              <li>
+                <Link to="/colors-paginated">Paginated Colours</Link>
               </li>
             </ul>
           </nav>
@@ -42,6 +35,7 @@ function App() {
             <Route path="/colors" element={<Colors />} />
             <Route path="/colors/:id" element={<EachColor/>} />
             <Route path="/addcolor" element={<AddColor />} />
+            <Route path="/colors-paginated" element={<ColorsPaginated />} />
           </Routes>
         </div>
       </Router>
