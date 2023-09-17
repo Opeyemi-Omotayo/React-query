@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getColor } from '../api/colors';
 import { getUser } from '../api/users';
 
-const EachColor = ({id}) => {
+const EachColor = () => {
+    const { id } = useParams();
+
   const colorQuery = useQuery({
     queryKey: ["colors", id],
     queryFn: () => getColor(id),
@@ -32,6 +35,7 @@ const EachColor = ({id}) => {
             : userQuery.data.name}
         </small>
       </h1>
+      <h3>Color ID: {id}</h3>
       <p>{colorQuery.data.body}</p>
     </>
   )

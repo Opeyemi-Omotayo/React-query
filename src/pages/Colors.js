@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getColors } from "../api/colors";
 
@@ -9,23 +10,11 @@ import { getColors } from "../api/colors";
 // /colors/2/comments -> ["colors", color.id, "comments"]
 
 const Colors = () => {
-//   const queryClient = useQueryClient();
 
   const colorsQuery = useQuery({
     queryKey: ["colors"],
     queryFn: getColors,
   });
-
-//   const newColorMutation = useMutation({
-//     mutationFn: (label) => {
-//       return wait(1000).then(() => {
-//         COLORS.push({ id: crypto.randomUUID(), label });
-//       });
-//     },
-//     onSuccess: () => {
-//       queryClient.invalidateQueries(["colors"]);
-//     },
-//   });
 
   if (colorsQuery.status === "loading") return <h1>Loading...</h1>;
   if (colorsQuery.status === "error") return <h1>{JSON.stringify(colorsQuery.error)}</h1>;
@@ -43,22 +32,12 @@ const Colors = () => {
               margin: "0.5rem",
             }}
           >
-            {color.label}
+           <Link to={`/colors/${color.id}`}>{color.label}</Link>
           </li>
         ))}
       </ul>
-      {/* <button
-        disabled={newColorMutation.isLoading}
-        onClick={() => newColorMutation.mutate("green")}
-      >
-        Add Color
-      </button> */}
     </div>
   );
 };
-
-// const wait = (duration) => {
-//   return new Promise((resolve) => setTimeout(resolve, duration));
-// };
 
 export default Colors;
